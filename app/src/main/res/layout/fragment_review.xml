@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    tools:context=".view.ReviewFragment">
+
+    <TextView
+        android:id="@+id/textView_payment_chekout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Rating and reviews"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F2F2F2"
+        android:padding="10dp">
+
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:saveEnabled="true"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000"
+            android:numStars="5"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="What is you rate?"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="Please share your"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="opnion about the product"/>
+
+        <EditText
+            android:id="@+id/edittext_bio_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/marco"
+            android:gravity="top"
+            android:hint="Your review"
+            android:lines="8"
+            android:padding="10sp"/>
+
+        <Button
+            android:id="@+id/button_SendReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_rectangulo"
+            android:text="SEND REVIEW"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+

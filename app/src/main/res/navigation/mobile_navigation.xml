@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/loginFragment2">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mansiapp.view.HomeFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.mansiapp.view.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.mansiapp.view.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.example.mansiapp.view.FavFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_fav" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mansiapp.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.mansiapp.view.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment2"
+        android:name="com.example.mansiapp.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.mansiapp.view.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/secussefulCartFragment"
+        android:name="com.example.mansiapp.view.SecussefulCartFragment"
+        android:label="fragment_secusseful_cart"
+        tools:layout="@layout/fragment_secusseful_cart" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.mansiapp.view.ReviewFragment"
+        android:label="fragment_review"
+        tools:layout="@layout/fragment_review" />
+</navigation>

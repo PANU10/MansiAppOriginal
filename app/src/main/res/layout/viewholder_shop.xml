@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#D8D8D8"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="2dp"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <TextView
+        android:id="@+id/item_center_map"
+        android:background="@android:color/white"
+        android:fontFamily="@font/baloo"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:padding="3dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/item_city_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="3dp"
+       />
+
+    <TextView
+        android:id="@+id/item_direction_map"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:padding="3dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

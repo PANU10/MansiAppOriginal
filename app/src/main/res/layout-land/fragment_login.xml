@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degrado"
+    tools:context=".view.LoginFragment">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <ImageView
+           android:layout_width="177dp"
+           android:layout_height="171dp"
+           android:layout_gravity="center"
+           android:layout_marginTop="10dp"
+           android:src="@drawable/image_mobile" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:paddingLeft="22dp"
+           android:paddingRight="22dp"
+           android:orientation="horizontal">
+
+           <EditText
+               android:id="@+id/editText_name_Login"
+               android:layout_width="wrap_content"
+               android:layout_height="50dp"
+               android:layout_weight="1"
+               android:layout_gravity="left"
+               android:hint="Email"
+               android:layout_marginRight="15dp"
+               android:padding="10sp"
+               android:background="@drawable/marco"
+               android:inputType="textEmailAddress"/>
+
+           <EditText
+               android:id="@+id/ediText_password_Login"
+               android:layout_width="wrap_content"
+               android:layout_height="50dp"
+               android:background="@drawable/marco"
+               android:layout_gravity="right"
+               android:layout_marginLeft="15dp"
+               android:layout_weight="1"
+               android:padding="10sp"
+               android:hint="Password"
+               android:inputType="textPassword"/>
+
+       </LinearLayout>
+
+
+   <TextView
+       android:id="@+id/texView_irAlRegistro_Login"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="15dp"
+       android:text="No tienes cuenta"/>
+
+       <Button
+           android:id="@+id/button_Acceder_Login"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/login_rectangulo"
+           android:text="LOGIN"
+           android:textColor="@android:color/white" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:padding="10dp">
+
+           <ImageView
+               android:id="@+id/imageView_google"
+               android:layout_width="0dp"
+               android:layout_height="58dp"
+               android:layout_marginLeft="100dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginBottom="4dp"
+               android:layout_weight="1"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:src="@drawable/google"
+               tools:ignore="MissingConstraints"
+               tools:layout_editor_absoluteX="237dp"
+               tools:layout_editor_absoluteY="28dp" />
+
+           <ImageView
+               android:id="@+id/imageView_facebook"
+               android:layout_width="0dp"
+               android:layout_height="58dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="100dp"
+               android:layout_marginBottom="4dp"
+               android:layout_weight="1"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:src="@drawable/facebook"
+               tools:ignore="MissingConstraints"
+               tools:layout_editor_absoluteX="237dp"
+               tools:layout_editor_absoluteY="28dp" />
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+</FrameLayout>
+</ScrollView>
