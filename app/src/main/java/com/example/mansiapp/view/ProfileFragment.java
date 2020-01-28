@@ -13,9 +13,11 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +30,9 @@ import com.example.mansiapp.R;
 import com.example.mansiapp.model.Accessory;
 import com.example.mansiapp.model.ProfileStatics;
 import com.example.mansiapp.model.Shop;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -39,6 +44,7 @@ public class ProfileFragment extends Fragment {
     MansiViewModel mansiViewModel;
     Button buttonLogut;
 
+    NavController navController;
 
 
     public ProfileFragment() {}
@@ -53,6 +59,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        navController = Navigation.findNavController(view);
 
         mansiViewModel = ViewModelProviders.of(requireActivity()).get(MansiViewModel.class);
         buttonLogut = view.findViewById(R.id.button_Logout);
@@ -72,7 +80,16 @@ public class ProfileFragment extends Fragment {
         buttonLogut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.loginFragment2);
+                mansiViewModel.cerrarSesion();
+
+
+                GoogleSignIn.getClient(requireActivity(), new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestIdToken(getString(R.string.default_web_client_id))
+                        .build()).signOut();
+
+                FirebaseAuth.getInstance().signOut();
+
+                navController.navigate(R.id.loginFragment2);
             }
         });
     }

@@ -46,7 +46,7 @@ import es.dmoral.toasty.Toasty;
  */
 public class LoginFragment extends Fragment {
 
-    private NavController navController;
+    private NavController navController = null;
     private GoogleSignInClient googleSignInClient;
     private int RC_SIGN_IN_WITH_GOOGLE = 1111;
     private FirebaseAuth mAuth;
@@ -59,14 +59,11 @@ public class LoginFragment extends Fragment {
     ImageView googleImageView;
     ImageView facebookImageView;
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
+    public LoginFragment() { }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false);
 
     }
@@ -75,6 +72,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        navController = Navigation.findNavController(view);
 
         //Google SignInCliente
         googleImageView = view.findViewById(R.id.imageView_google);
