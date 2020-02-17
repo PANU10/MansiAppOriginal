@@ -21,6 +21,10 @@ import com.bumptech.glide.Glide;
 import com.example.mansiapp.MansiViewModel;
 import com.example.mansiapp.R;
 import com.example.mansiapp.model.Smartphone;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.List;
 
@@ -41,45 +45,47 @@ public class SmartphonesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mansiViewModel = ViewModelProviders.of(requireActivity()).get(MansiViewModel.class);;
-
         RecyclerView recyclerView = view.findViewById(R.id.smartphoneList);
 
-        final SmartphonesAdapter smartphonesAdapter = new SmartphonesAdapter();
-        recyclerView.setAdapter(smartphonesAdapter);
+        Query query = FirebaseFirestore.getInstance().collection("Smartphone").limit(50);
 
-        mansiViewModel.cargarSmartphones().observe(getViewLifecycleOwner(), new Observer<List<Smartphone>>() {
-            @Override
-            public void onChanged(List<Smartphone> smartphones) {
-                smartphonesAdapter.establecerListaSmarphones(smartphones);
-            }
-        });
+        FirestoreRecyclerOptions<Smartphone> options = new FirestoreRecyclerOptions.Builder<Smartphone>()
+                .setQuery(query, Smartphone.class)
+                .setLifecycleOwner(this)
+                .build();
+
+        recyclerView.setAdapter(new SmartphonesAdapter(options));
+
+
     }
 
-
-    class SmartphonesAdapter extends RecyclerView.Adapter<SmartphonesAdapter.SmartphoneViewHolder>{
+    class SmartphonesAdapter extends FirestoreRecyclerAdapter<Smartphone, SmartphonesAdapter.SmartphoneViewHolder> {
 
         List<Smartphone> smartphoneList;
 
+        /**
+         * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
+         * FirestoreRecyclerOptions} for configuration options.
+         *
+         * @param options
+         */
+        public SmartphonesAdapter(@NonNull FirestoreRecyclerOptions<Smartphone> options) {
+            super(options);
+        }
+
         @NonNull
         @Override
-        public SmartphoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new SmartphoneViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_smartphone, parent, false));
+        public SmartphonesAdapter.SmartphoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return null;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull SmartphoneViewHolder holder, int position) {
-
+        protected void onBindViewHolder(@NonNull SmartphoneViewHolder holder, int position, @NonNull Smartphone model) {
             Smartphone smartphone = smartphoneList.get(position);
             holder.tipoTextView.setText(smartphone.getTipo());
             holder.nameTextView.setText(smartphone.getNombre());
             holder.precioTextView.setText(String.valueOf(smartphone.getPrecio()));
             Glide.with(requireActivity()).load(R.drawable.samsing_movile).into(holder.imageImageView);
-        }
-
-        @Override
-        public int getItemCount() {
-            return smartphoneList == null ? 0 : smartphoneList.size();
         }
 
         public void establecerListaSmarphones(List<Smartphone> s){

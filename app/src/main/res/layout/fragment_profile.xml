@@ -41,6 +41,7 @@
                 android:padding="5dp">
 
                 <TextView
+                    android:id="@+id/userNameProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -51,8 +52,9 @@
                     android:textStyle="bold" />
 
                 <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:id="@+id/userEmailProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:textStyle="bold|normal"
                     android:layout_marginLeft="-27dp"

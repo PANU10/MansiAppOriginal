@@ -5,7 +5,10 @@ import android.view.View;
 
 
 import com.example.mansiapp.R;
+import com.example.mansiapp.model.Accessory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+
+        FirebaseFirestore.getInstance().setFirestoreSettings(new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(false)
+                .build());
+
+   //     FirebaseFirestore.getInstance().collection("accessory").add(new Accessory("Accessory", "Samsung S10", 99.99f));
 
 
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {

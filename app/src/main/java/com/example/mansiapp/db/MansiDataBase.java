@@ -15,6 +15,7 @@ import com.example.mansiapp.model.ProfileStatics;
 import com.example.mansiapp.model.Shop;
 import com.example.mansiapp.model.Smartphone;
 import com.example.mansiapp.model.User;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 @Database(entities = {User.class, Smartphone.class, Shop.class, Accessory.class, ProfileStatics.class, Offer.class}, version = 13)
 public abstract class MansiDataBase extends RoomDatabase {

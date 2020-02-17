@@ -17,4 +17,13 @@
         android:paddingBottom="55dp"
         />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/plus_original"/>
 </FrameLayout>
